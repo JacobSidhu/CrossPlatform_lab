@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
+class Show extends StatelessWidget {
+  const Show({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return SnackBar(
+      content: Text("Hello world"), //t
+      duration: Duration(seconds: 3),
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
@@ -23,10 +34,7 @@ class MyApp extends StatelessWidget {
             Flexible(
               child: TextButton(
                 onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("hello i am here !"),
-                    duration: Duration(seconds: 3),
-                  ));
+                  Show();
                 },
                 child: Text("Show SnakBar"),
               ),
